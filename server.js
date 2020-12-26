@@ -1,3 +1,5 @@
+"use strict";
+
 //Declaration Statements
 const PORT = (process.env.PORT || 4000);
 const codeLength = 6;
@@ -82,7 +84,7 @@ io.on("connection", (socket) => {
             socket.to(socketRoomCode).emit("message", `${socket.username} changed their username to ${newUsername}`);
         }
         socket.username = newUsername;
-    })
+    });
 
     //Join Room
     socket.on("roomJoin", (roomCode) => {
@@ -94,17 +96,17 @@ io.on("connection", (socket) => {
             socket.emit("roomJoinSuccess", roomCode, rooms.get(roomCode));
 
             //Message client about the room join
-            socket.emit("message", `You joined room ${roomCode} "${rooms.get(roomCode).name}"`)
+            socket.emit("message", `You joined room ${roomCode} "${rooms.get(roomCode).name}"`);
 
             //Broadcast to the clients in the room that the client has joined
             socket.to(roomCode).emit("message", `${socket.username} has joined`);
         } else {
             socket.emit("error", "Invalid Room!");
         }
-    })
+    });
 
     //Create Room
-    socket.on("roomCreate", (roomName) => {
+    socket.on("roomCreate", (roomName, roomIntermissionTime, roomQuestionTime) => {
         //Create a random id
         let newRoomId = "";
         do {
@@ -114,9 +116,16 @@ io.on("connection", (socket) => {
         //Set initial room settings
         rooms.set(newRoomId, {
             name: roomName,
-            music: (gameState == "question" ? getRandomGameTrack() : getRandomIntermissionTrack()),
-            currentQuestion: (gameState == "question" ? getRandomQuestion() : null),
-            results: new Map()
+            music: getRandomIntermissionTrack(),
+            currentQuestion: null,
+            results: new Map(),
+            clock: -1,
+            timeLength: {
+                intermission: roomIntermissionTime,
+                question: roomQuestionTime,
+                results: 5
+            },
+            gameState: "intermission"
         });
 
         console.log(`client ${socket.id} created new room: ${newRoomId} - ${rooms.get(newRoomId)}`);
@@ -125,8 +134,8 @@ io.on("connection", (socket) => {
         socket.emit("roomJoinSuccess", newRoomId, rooms.get(newRoomId));
 
         //Message client about the room join
-        socket.emit("message", `You joined room ${newRoomId} "${rooms.get(newRoomId).name}"`)
-    })
+        socket.emit("message", `You joined room ${newRoomId} "${rooms.get(newRoomId).name}"`);
+    });
 
     //Vote
     socket.on("vote", (choice) => {
@@ -138,7 +147,7 @@ io.on("connection", (socket) => {
             //Set count
             rooms.get(socketRoomCode).results.set(choice, 1);
         }
-    })
+    });
 
     //Disconnect
     socket.on("disconnect", (reason) => {
@@ -155,8 +164,8 @@ io.on("connection", (socket) => {
                 socket.to(socketRoomCode).emit("message", `${socket.username} has left`);
             }
         }
-    })
-})
+    });
+});
 
 
 
@@ -176,6 +185,78 @@ GAME STATES: (clock)
 140-160 => intermission
 */
 setInterval(() => {
+    rooms.forEach((roomInfo, roomCode) => {
+        //Initialize
+        roomInfo.clock++;
+        //Update Status
+        io.sockets.emit("updateTimer", roomInfo.timeLength[roomInfo.gameState] - roomInfo.clock);
+        //console.log(roomInfo);
+        switch (roomInfo.gameState) {
+            case "intermission":
+                {
+
+                    //If intermission time is over
+                    if (roomInfo.clock >= roomInfo.timeLength[roomInfo.gameState]) {
+                        roomInfo.clock = -1;
+                        roomInfo.gameState = "question";
+
+                        //If question time has started
+                        let musicInfo = getRandomGameTrack();
+                        roomInfo.currentQuestion = getRandomQuestion();
+                        roomInfo.music = musicInfo;
+                        io.sockets.to(roomCode).emit("updateRoom", roomInfo);
+
+                        //Change Music
+                        io.sockets.to(roomCode).emit("changeMusic", musicInfo);
+                    }
+                }
+                break;
+            case "results":
+                {
+
+                    //If results time is over
+                    if (roomInfo.clock >= roomInfo.timeLength[roomInfo.gameState]) {
+                        roomInfo.clock = -1;
+                        roomInfo.gameState = "intermission";
+
+                        //Update text state
+                        io.sockets.to(roomCode).emit("updateTextStatus", "Intermission");
+                    }
+                }
+                break;
+            case "question":
+                {
+                    //If everyone has voted
+                    if(clientsInRoom(roomCode).length <= [...roomInfo.results.values()].reduce((acc, cur) => acc + cur, 0)){
+                        roomInfo.clock = roomInfo.timeLength[roomInfo.gameState];
+                    }
+                    //If question time is over
+                    if (roomInfo.clock >= roomInfo.timeLength[roomInfo.gameState]) {
+                        roomInfo.clock = -1;
+                        roomInfo.gameState = "results";
+
+                        //Update text state
+                        io.sockets.to(roomCode).emit("updateTextStatus", "Results on the Right");
+                        //If results time has started
+                        let musicInfo = getRandomIntermissionTrack();
+                        roomInfo.currentQuestion = null;
+                        roomInfo.music = musicInfo;
+                        io.sockets.to(roomCode).emit("updateRoom", roomInfo);
+                        //io.sockets.to(roomCode).emit("updateTextStatus", "Results on the Right");
+                        io.sockets.to(roomCode).emit("results", Object.fromEntries(rooms.get(roomCode).results.entries()));
+                        rooms.get(roomCode).results.clear();
+
+                        //Change Music
+                        io.sockets.to(roomCode).emit("changeMusic", musicInfo);
+                    }
+                }
+                break;
+        }
+
+        
+    });
+}, clockDeltaTime);
+/*setInterval(() => {
     switch (clock) {
         case 0:
             gameState = "question";
@@ -222,4 +303,4 @@ setInterval(() => {
     if (clock >= 100) {
         clock = 0;
     }
-}, clockDeltaTime);
+}, clockDeltaTime);*/

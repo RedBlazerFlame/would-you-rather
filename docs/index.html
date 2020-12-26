@@ -16,6 +16,9 @@
     <script src="themes.js"></script>
     <script defer src="client.js"></script>
 
+    <!--Icon & Title-->
+    <link rel="icon" href="Would You Rather Logo.png" type="image/png" />
+
     <title>Would you Rather?</title>
 </head>
 
@@ -25,13 +28,16 @@
     <!--Window-->
     <main class="window">
         <section class="header">
-            <div class="gameHeaderInfo">
-                <p class="title">
-                    <span class="primaryColor">Would</span> you <span class="secondaryColor">Rather?</span>
-                </p>
-                <p class="author">
-                    <span class="secondaryColor">Made</span> by <span class="primaryColor">RedBlazerFlame</span>
-                </p>
+            <div class="gameHeaderInfoLogo">
+                <img id="logo" src="Would You Rather Logo.png" />
+                <div class="gameHeaderInfo">
+                    <p class="title">
+                        <span class="primaryColor">Would</span> you <span class="secondaryColor">Rather?</span>
+                    </p>
+                    <p class="author">
+                        <span class="secondaryColor">Made</span> by <span class="primaryColor">RedBlazerFlame</span>
+                    </p>
+                </div>
             </div>
             <div class="themeFormHeader">
                 <label for="theme">Theme:</label>
@@ -48,7 +54,7 @@
                         <option value="dpg1">Purple and Green Dark</option>
                         <option value="drb1">Red and Blue Dark</option>
                     </optgroup>
-                        
+
                 </select>
             </div>
             <div class="usernameFormHeader">
@@ -80,6 +86,10 @@
                     Code</span>&CloseCurlyDoubleQuote; field <span class="secondaryColor">blank</span> to create a
                 random room and then invite people to that room using the 6-digit alphanumeric code.</p>
             <input id="roomCode" placeholder="Room Code" />
+            <div id="roomCreationForm" class="roomCreationForm hidden">
+                <input id="roomIntermissionTime" placeholder="Intermission Time (0s-30s)" />
+                <input id="roomQuestionTime" placeholder="Question Time (10s-80s)" />
+            </div>
             <button id="roomCodeSubmit">Create Room Instead</button>
         </section>
         <section class="rsidebar">

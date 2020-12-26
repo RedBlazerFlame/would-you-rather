@@ -1,3 +1,5 @@
+"use strict";
+
 //Client Initialization
 const socket = io("/");
 
@@ -22,6 +24,7 @@ const leftSidebar = id("lsidebar");
 const resultsElement = id("results");
 const themeSelector = id("theme");
 const [music, musicName, musicAuthor] = [id("music"), id("musicName"), id("musicAuthor")];
+const [roomCreationForm, roomIntermissionTime, roomQuestionTime] = [id("roomCreationForm"), id("roomIntermissionTime"), id("roomQuestionTime")];
 const roomId = null;
 const themeOptions = [...([...themeSelector.childNodes].map((item) => [...item.childNodes]).reduce((acc, cur) => acc.concat(cur)).filter((node) => node.tagName == "OPTION"))];
 let themeDictionary = new Map();
@@ -37,6 +40,17 @@ Program Functions
 const play = (src) => {
     music.src = `music/${src}`;
     music.play();
+}
+
+//Clamp Number between Two Integers
+const clamp = (min, val, max) => {
+    if (min > val) {
+        return min;
+    } else if (max < val) {
+        return max;
+    } else {
+        return val;
+    }
 }
 
 //setTimeout(()=>{},1000);
@@ -55,7 +69,7 @@ if (typeof roomId !== "string") {
 //Create a dictionary of themeIds and themeNames
 themeOptions.forEach((option) => {
     themeDictionary.set(option.value, option.innerText);
-})
+});
 
 //If client localStorage is null
 if (!clientLocalStorageInfo) {
@@ -89,7 +103,7 @@ Client Events
 //Log Message (for debugging)
 socket.on("log", (message) => {
     console.log(message);
-})
+});
 
 //Visible Message
 socket.on("message", (message) => {
@@ -104,7 +118,7 @@ socket.on("message", (message) => {
     } else {
         leftSidebar.appendChild(pElement);
     }
-})
+});
 
 //Error Message
 socket.on("error", (reason) => {
@@ -124,7 +138,28 @@ socket.on("error", (reason) => {
     } else {
         leftSidebar.appendChild(pElement);
     }
-})
+});
+
+/*
+Client Input roomInfo
+*/
+
+//Intermission Time Input
+
+roomIntermissionTime.addEventListener("change", (ev) => {
+    if (roomIntermissionTime.value !== "") {
+        roomIntermissionTime.value = clamp(0, +roomIntermissionTime.value, 30);
+    }
+
+});
+
+//Question Time Input
+
+roomQuestionTime.addEventListener("change", (ev) => {
+    if (roomQuestionTime.value !== "") {
+        roomQuestionTime.value = clamp(10, +roomQuestionTime.value, 80);
+    }
+});
 
 //Client Change Theme
 themeSelector.addEventListener("change", (ev) => {
@@ -150,15 +185,17 @@ usernameInput.addEventListener("change", (ev) => {
         clientLocalStorageInfo.userName = usernameInput.value;
         localStorage.setItem("clientInfo", JSON.stringify(clientLocalStorageInfo));
     }
-})
+});
 
 //Client Room Form Change Input
 roomCode.addEventListener("input", (ev) => {
     if (roomCode.value === "") {
         if (roomCode.placeholder == "Room Code") {
             roomJoinButton.innerText = "Create Room Instead";
+            roomCreationForm.classList.add("hidden");
         } else {
             roomJoinButton.innerText = "Join Room Instead";
+            roomCreationForm.classList.remove("hidden");
         }
         roomJoinButton.style.backgroundColor = "var(--mainHome-join-background-color)";
         roomJoinButton.style.textColor = "var(--mainHome-join-text-color)";
@@ -171,7 +208,7 @@ roomCode.addEventListener("input", (ev) => {
         roomJoinButton.style.backgroundColor = "var(--mainHome-join-background-color2)";
         roomJoinButton.style.textColor = "var(--mainHome-join-text-color2)";
     }
-})
+});
 
 //Client Join Room
 roomJoinButton.addEventListener("click", (ev) => {
@@ -188,6 +225,7 @@ roomJoinButton.addEventListener("click", (ev) => {
             roomCode.placeholder = "Room Name";
             roomJoinButton.innerText = "Join Room Instead";
             roomFormInfo.innerHTML = "Enter the <span class='primaryColor'>Room</span> <span class='secondaryColor'>Name</span> of the room you are creating. Leave it blank if you want to join an existing room instead.";
+            roomCreationForm.classList.remove("hidden");
         } else {
             // The user intends to join an existing room
             socket.emit("roomJoin", roomCode.value);
@@ -200,12 +238,13 @@ roomJoinButton.addEventListener("click", (ev) => {
             roomCode.placeholder = "Room Code";
             roomJoinButton.innerText = "Create Room Instead";
             roomFormInfo.innerHTML = "Leave the &OpenCurlyDoubleQuote;<span class='primaryColor'>Room Code</span>&CloseCurlyDoubleQuote; field <span class='secondaryColor'>blank</span> to create a random room and then invite people to that room using the 6-digit alphanumeric code.";
+            roomCreationForm.classList.add("hidden");
         } else {
             // The user intends to create a new room
-            socket.emit("roomCreate", roomCode.value);
+            socket.emit("roomCreate", roomCode.value, (roomIntermissionTime.value === "" ? 10 : +roomIntermissionTime.value),(roomQuestionTime.value === "" ? 60 : +roomQuestionTime.value));
         }
     }
-})
+});
 
 //Client Join Room Success
 socket.on("roomJoinSuccess", (resRoomCode, resRoomInfo) => {
@@ -243,12 +282,12 @@ socket.on("roomJoinSuccess", (resRoomCode, resRoomInfo) => {
             choices.appendChild(divElement);
 
             index++;
-        })
+        });
     }
 
     //Show the screen
     showGameScreen();
-})
+});
 
 const showGameScreen = () => {
     //Hide the Main Home Screen
@@ -286,29 +325,19 @@ const showGameScreen = () => {
                 choices.appendChild(divElement);
 
                 index++;
-            })
+            });
         }
-    })
+    });
 
     //Update Clock
-    socket.on("updateTimer", (clockTime, gameState) => {
-        switch (gameState) {
-            case "question":
-                question.innerText = `${baseQuestionText} (${60 - clockTime})`;
-                break;
-            case "results":
-                question.innerText = `${baseQuestionText} (${70 - clockTime})`;
-                break;
-            case "intermission":
-                question.innerText = `${baseQuestionText} (${100 - clockTime})`;
-                break;
-        }
-    })
+    socket.on("updateTimer", (clockTime) => {
+        question.innerText = `${baseQuestionText} (${clockTime})`;
+    });
 
     //Update Text Status (Top Text)
     socket.on("updateTextStatus", (newText) => {
         baseQuestionText = newText;
-    })
+    });
 
     //Client Vote
     choices.addEventListener("click", (ev) => {
@@ -336,8 +365,8 @@ const showGameScreen = () => {
             let pElement = document.createElement("p");
             pElement.appendChild(pText);
             resultsElement.appendChild(pElement);
-        })
-    })
+        });
+    });
 
     //Change Music
     socket.on("changeMusic", ({ name, author, fileName }) => {
@@ -345,5 +374,5 @@ const showGameScreen = () => {
         musicName.innerText = name;
         musicAuthor.innerText = author;
         play(fileName);
-    })
+    });
 };

@@ -14,7 +14,10 @@ const themes = {
         "main-choice-text-color3": "#FFFFFF",
         "main-choice-text-color4": "#FFFFFF",
         "main-choice-background-color3": "#111111",
-        "main-choice-background-color4": "#222222"
+        "main-choice-background-color4": "#222222",
+        "image-hue-rotate-amount": "0deg",
+        "image-saturation-amount": "0%",
+        "image-invert-amount": "100%"
     },
     "lbo1":{
         "primary-color": "#FFAA00",
@@ -31,7 +34,10 @@ const themes = {
         "main-choice-text-color3": "#FFFFFF",
         "main-choice-text-color4": "#FFFFFF",
         "main-choice-background-color3": "#996600",
-        "main-choice-background-color4": "#006699"
+        "main-choice-background-color4": "#006699",
+        "image-hue-rotate-amount": "180deg",
+        "image-saturation-amount": "100%",
+        "image-invert-amount": "0%"
     },
     "lpg1":{
         "primary-color": "#00FF00",
@@ -48,7 +54,10 @@ const themes = {
         "main-choice-text-color3": "#FFFFFF",
         "main-choice-text-color4": "#FFFFFF",
         "main-choice-background-color3": "#009900",
-        "main-choice-background-color4": "#990099"
+        "main-choice-background-color4": "#990099",
+        "image-hue-rotate-amount": "280deg",
+        "image-saturation-amount": "100%",
+        "image-invert-amount": "0%"
     },
     "lrb1":{
         "primary-color": "#FF0000",
@@ -65,7 +74,10 @@ const themes = {
         "main-choice-text-color3": "#FFFFFF",
         "main-choice-text-color4": "#FFFFFF",
         "main-choice-background-color3": "#990000",
-        "main-choice-background-color4": "#009999"
+        "main-choice-background-color4": "#009999",
+        "image-hue-rotate-amount": "160deg",
+        "image-saturation-amount": "100%",
+        "image-invert-amount": "0%"
     },
     "dm1":{
         "primary-color": "#666666",
@@ -82,7 +94,10 @@ const themes = {
         "main-choice-text-color3": "#FFFFFF",
         "main-choice-text-color4": "#FFFFFF",
         "main-choice-background-color3": "#222222",
-        "main-choice-background-color4": "#444444"
+        "main-choice-background-color4": "#444444",
+        "image-hue-rotate-amount": "0deg",
+        "image-saturation-amount": "0%",
+        "image-invert-amount": "0%"
     },
     "dbo1":{
         "primary-color": "#00aaff",
@@ -99,7 +114,10 @@ const themes = {
         "main-choice-text-color3": "#FFFFFF",
         "main-choice-text-color4": "#FFFFFF",
         "main-choice-background-color3": "#006699",
-        "main-choice-background-color4": "#996600"
+        "main-choice-background-color4": "#996600",
+        "image-hue-rotate-amount": "0deg",
+        "image-saturation-amount": "100%",
+        "image-invert-amount": "0%"
     },
     "dpg1":{
         "primary-color": "#00FF00",
@@ -116,7 +134,10 @@ const themes = {
         "main-choice-text-color3": "#FFFFFF",
         "main-choice-text-color4": "#FFFFFF",
         "main-choice-background-color3": "#009900",
-        "main-choice-background-color4": "#990099"
+        "main-choice-background-color4": "#990099",
+        "image-hue-rotate-amount": "280deg",
+        "image-saturation-amount": "100%",
+        "image-invert-amount": "0%"
     },
     "drb1":{
         "primary-color": "#FF0000",
@@ -133,6 +154,9 @@ const themes = {
         "main-choice-text-color3": "#FFFFFF",
         "main-choice-text-color4": "#FFFFFF",
         "main-choice-background-color3": "#990000",
-        "main-choice-background-color4": "#009999"
+        "main-choice-background-color4": "#009999",
+        "image-hue-rotate-amount": "160deg",
+        "image-saturation-amount": "100%",
+        "image-invert-amount": "0%"
     }
 }

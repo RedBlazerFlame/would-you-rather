@@ -5,6 +5,11 @@
     --secondary-color: #ffaa00;
     --text-color: #FFFFFF;
 
+    /*Logo Filters*/
+    --image-hue-rotate-amount: 0deg;
+    --image-saturation-amount: 100%;
+    --image-invert-amount: 0%;
+
     /*Global Properties*/
     font-size: clamp(0.9vh, 0.9vw, 900px);
     font-family: "Montserrat", sans-serif;
@@ -92,6 +97,10 @@ body{
     margin: 0;
     padding: 0;
     max-width: 100vw;
+}
+
+input:focus {
+    outline: none;
 }
 
 /*Window*/
@@ -211,7 +220,24 @@ section.footer{
 }
 
 /*Header Children*/
-section.header > div.gameHeaderInfo{
+section.header > div.gameHeaderInfoLogo {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+section.header > div.gameHeaderInfoLogo > * {
+    margin: 0;
+}
+
+img#logo {
+    margin-right: 10px;
+    height: 3rem;
+    display: inline;
+    filter: hue-rotate(var(--image-hue-rotate-amount)) saturate(var(--image-saturation-amount)) invert(var(--image-invert-amount));
+}
+
+section.header > div.gameHeaderInfoLogo > div.gameHeaderInfo {
     display: flex;
     flex-direction: column;
 }
@@ -222,11 +248,11 @@ section.header > div.usernameFormHeader{
 }
 
 /*Header Info Children*/
-section.header > div.gameHeaderInfo > *{
+section.header > div.gameHeaderInfoLogo > div.gameHeaderInfo > *{
     margin: 0;
 }
 
-section.header > div.gameHeaderInfo > p.author{
+section.header > div.gameHeaderInfoLogo > div.gameHeaderInfo > p.author{
     font-size: 1rem;
     font-family: 'roboto', sans-serif;
 }
@@ -373,6 +399,7 @@ section.mainHome > input#roomCode {
     border-bottom: 4px double var(--main-text-color);
     transition: 1s all;
     margin:20px;
+    background-color: var(--main-background-color);
 }
 section.mainHome > input#roomCode:focus, section.mainHome > input#roomCode:hover {
     border: none;
@@ -400,6 +427,36 @@ section.mainHome > button#roomCodeSubmit {
     min-width: 80px;
     background-color: var(--mainHome-join-background-color);
     color: var(--mainHome-join-text-color);
+}
+
+section.mainHome > div.roomCreationForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.mainHome > div.roomCreationForm > input {
+    font-size: 2rem;
+    font-family: 'montserrat', sans-serif;
+    text-align: center;
+    color: var(--primary-color);
+    border: none;
+    border-bottom: 4px double var(--main-text-color);
+    transition: 1s all;
+    margin:20px;
+    background-color: var(--main-background-color);
+}
+
+section.mainHome > div.roomCreationForm > input:focus, section.mainHome > div.roomCreationForm > input:hover {
+    border: none;
+    border-bottom: 4px double var(--primary-color);
+    transition: 1s all;
+}
+
+section.mainHome > div.roomCreationForm > input:focus::-webkit-input-placeholder, section.mainHome > div.roomCreationForm > input:hover::-webkit-input-placeholder {
+    color: var(--primary-color);
+    opacity: 0.7;
+    transition: 1s all;
 }
 
 /*Footer Children*/

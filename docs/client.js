@@ -23,7 +23,11 @@ const resultsElement = id("results");
 const themeSelector = id("theme");
 const [music, musicName, musicAuthor] = [id("music"), id("musicName"), id("musicAuthor")];
 const roomId = null;
+const themeOptions = [...([...themeSelector.childNodes].map((item) => [...item.childNodes]).reduce((acc, cur) => acc.concat(cur)).filter((node) => node.tagName == "OPTION"))];
+let themeDictionary = new Map();
 let baseQuestionText = "";
+//localStorage.removeItem("clientInfo");
+let clientLocalStorageInfo = JSON.parse(localStorage.getItem("clientInfo"));
 
 /*===============
 Program Functions
@@ -46,6 +50,36 @@ if (typeof roomId !== "string") {
     console.log("Not connected to room");
     main.classList.add("hidden");
     mainHome.classList.remove("hidden");
+}
+
+//Create a dictionary of themeIds and themeNames
+themeOptions.forEach((option) => {
+    themeDictionary.set(option.value, option.innerText);
+})
+
+//If client localStorage is null
+if (!clientLocalStorageInfo) {
+    //Get consent from the user
+    if (confirm("Would you like us to keep track of your theme preferences and username? (This data is only used for user convenience; it will not be used by any third-parties)")) {
+        //The user agrees to keep track of their preferences
+        clientLocalStorageInfo = {
+            themeId: "dbo1",
+            userName: "Player"
+        };
+    }
+} else {
+    //If there are things in the localStorage, process them
+    //Change theme
+    themeSelector.value = clientLocalStorageInfo.themeId;
+    themeSelector.placeholder = themeDictionary.get(clientLocalStorageInfo.themeId);
+    let themeValues = themes[clientLocalStorageInfo.themeId];
+    Object.keys(themeValues).forEach((property) => {
+        root.style.setProperty(`--${property}`, themeValues[property]);
+    });
+
+    //Change username
+    socket.on("setInitialUsername", clientLocalStorageInfo.userName);
+    usernameInput.value = clientLocalStorageInfo.userName;
 }
 
 /*===========
@@ -99,11 +133,23 @@ themeSelector.addEventListener("change", (ev) => {
     Object.keys(themeValues).forEach((property) => {
         root.style.setProperty(`--${property}`, themeValues[property]);
     });
+
+    //Store user preferences
+    if (clientLocalStorageInfo) {
+        clientLocalStorageInfo.themeId = themeSelector.value;
+        localStorage.setItem("clientInfo", JSON.stringify(clientLocalStorageInfo));
+    }
 });
 
 //Client Username Input Change
 usernameInput.addEventListener("change", (ev) => {
     socket.emit("changeUsername", usernameInput.value);
+
+    //Store user preferences
+    if (clientLocalStorageInfo) {
+        clientLocalStorageInfo.userName = usernameInput.value;
+        localStorage.setItem("clientInfo", JSON.stringify(clientLocalStorageInfo));
+    }
 })
 
 //Client Room Form Change Input

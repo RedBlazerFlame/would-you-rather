@@ -65,10 +65,15 @@ io.on("connection", (socket) => {
     //Socket local variables
     let socketRoomCode = null;
 
-    socket.username = `Player${socket.id}`;
+    socket.username = `Player`;
 
     socket.emit("log", "Hello Mortals.");
     socket.broadcast.emit("log", `client ${socket.id} joined`);
+
+    //Set Initial Username
+    socket.on("setInitialUsername", (username) => {
+        socket.username = username;
+    });
 
     //Change Username
     socket.on("changeUsername", (newUsername) => {

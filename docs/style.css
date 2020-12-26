@@ -6,7 +6,7 @@
     --text-color: #FFFFFF;
 
     /*Global Properties*/
-    font-size: 16px;
+    font-size: clamp(0.9vh, 0.9vw, 900px);
     font-family: "Montserrat", sans-serif;
 
     /*Window*/

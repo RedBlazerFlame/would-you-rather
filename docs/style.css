@@ -1,0 +1,435 @@
+/*Root*/
+:root, html{
+    /*Colors*/
+    --primary-color: #00aaff;
+    --secondary-color: #ffaa00;
+    --text-color: #FFFFFF;
+
+    /*Global Properties*/
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+
+    /*Window*/
+    --window-background-color: #222222;
+
+    /*Header*/
+    --header-background-color: #444444;
+    --header-text-color: var(--text-color);
+    --header-height: 8vh;
+
+    /*Footer*/
+    --footer-background-color: #444444;
+    --footer-text-color: var(--text-color);
+    --footer-height: 8vh;
+    
+    /*Left Sidebar*/
+    --lsidebar-background-color: var(--primary-color);
+    --lsidebar-text-color: var(--text-color);
+    --lsidebar-width: 20vw;
+    --lsidebar-vertical-margin: 10px;
+    --lsidebar-right-border-radius: 10px;
+
+    /*Right Sidebar*/
+    --rsidebar-background-color: var(--secondary-color);
+    --rsidebar-text-color: var(--text-color);
+    --rsidebar-width: 20vw;
+    --rsidebar-vertical-margin: 10px;
+    --rsidebar-left-border-radius: 10px;
+
+    /*Main*/
+    --main-background-color: #666666;
+    --main-text-color: #FFFFFF;
+    --main-margin: 10px;
+    --main-border-radius: 10px;
+
+    /*Main Children*/
+    --main-question-text-color: #FFFFFF;
+
+    --main-choice-text-color1: #000000;
+    --main-choice-text-color2: #000000;
+    --main-choice-text-color3: #FFFFFF;
+    --main-choice-text-color4: #FFFFFF;
+    
+    --main-choice-background-color1: var(--primary-color);
+    --main-choice-background-color2: var(--secondary-color);
+    --main-choice-background-color3: #006699;
+    --main-choice-background-color4: #996600;
+
+    /*Main Home Children*/
+    --mainHome-join-text-color: var(--main-text-color);
+    --mainHome-join-background-color: var(--primary-color);
+
+    --mainHome-join-text-color2: var(--main-text-color);
+    --mainHome-join-background-color2: var(--secondary-color);
+}
+
+/*Color Classes*/
+.primaryColor{
+    color: var(--primary-color);
+}
+
+.secondaryColor{
+    color: var(--secondary-color);
+}
+
+/*display classes*/
+.hidden{
+    display: none;
+    visibility: hidden;
+}
+
+.line{
+    border: 1px solid var(--main-question-text-color);
+    width: 75%;
+    padding: 0;
+    margin-top: 0;
+    height: 0;
+}
+
+
+/*Elements*/
+body{
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+}
+
+/*Window*/
+main.window{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: var(--window-background-color);
+    display: grid;
+    grid-template-columns: minmax(min-content, var(--lsidebar-width)) auto minmax(min-content, var(--rsidebar-width));
+    grid-template-rows: minmax(min-content , var(--header-height)) minmax(auto, calc(100vh - (var(--header-height) + var(--footer-height)))) minmax(min-content , var(--footer-height));
+    grid-template-areas:
+    "header header header"
+    "lsidebar main rsidebar"
+    "footer footer footer";
+
+    font-size: 1rem;
+
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+/*Window Children*/
+main.window > *{
+    padding: 10px;
+    margin: 0;
+}
+
+section.header{
+    grid-area: header;
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+    font-size: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.lsidebar{
+    grid-area: lsidebar;
+    background-color: var(--primary-color);
+    color: var(--lsidebar-text-color);
+
+    margin: var(--lsidebar-vertical-margin) 0 var(--lsidebar-vertical-margin) 0;
+    border-radius: 0 var(--lsidebar-right-border-radius) var(--lsidebar-right-border-radius) 0;
+
+    font-size: 1rem;
+    overflow-y: auto;
+    
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+section.main{
+    grid-area: main;
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+
+    margin: var(--main-margin);
+    border-radius: var(--main-border-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    z-index: 2;
+}
+
+section.mainHome{
+    grid-area: main;
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+
+    margin: var(--main-margin);
+    border-radius: var(--main-border-radius);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /*display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;*/
+}
+
+section.rsidebar{
+    grid-area: rsidebar;
+    background-color: var(--secondary-color);
+    color: var(--rsidebar-text-color);
+
+    margin: var(--rsidebar-vertical-margin) 0 var(--rsidebar-vertical-margin) 0;
+    border-radius: var(--rsidebar-left-border-radius) 0 0 var(--rsidebar-left-border-radius);
+
+    font-size: 1rem;
+    overflow-y: auto;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+section.footer{
+    grid-area: footer;
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    font-size: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Header Children*/
+section.header > div.gameHeaderInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+section.header > div.usernameFormHeader{
+    display: flex;
+    flex-direction: column;
+}
+
+/*Header Info Children*/
+section.header > div.gameHeaderInfo > *{
+    margin: 0;
+}
+
+section.header > div.gameHeaderInfo > p.author{
+    font-size: 1rem;
+    font-family: 'roboto', sans-serif;
+}
+
+/*Header Username Children*/
+section.header > div.usernameFormHeader > *{
+    margin: 0;
+}
+
+section.header > div.usernameFormHeader > p.label {
+    font-size: 1rem;
+}
+
+section.header > div.usernameFormHeader > input#usernameInput {
+    margin-top: 10px;
+    font-size: 2rem;
+    color: var(--secondary-color);
+    background-color: rgba(0,0,0,0);
+    border: none;
+    border-bottom: 2px solid var(--text-color);
+}
+
+section.header > div.themeFormHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.header > div.themeFormHeader > *{
+    margin:0;
+    font-size: 1.25rem;
+}
+
+section.header > div.themeFormHeader > select#theme{
+    font-family: "roboto", sans-serif;
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+}
+
+
+
+/*Left Side Bar Children*/
+section.lsidebar > p {
+    margin: 5px 0 0 0;
+}
+
+/*Right Side Bar Children*/
+section.rsidebar > h1.rsidebarHeader {
+    margin: 0;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+section.rsidebar > div.results {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+section.rsidebar > div.results > p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+/*Main Children*/
+section.main > p#question{
+    color: var(--main-question-text-color);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+section.main > section#choices{
+    flex-grow: 1000;
+    display: flex;
+
+    flex-direction: row;
+    justify-content: center;
+    align-content: stretch;
+    flex-wrap: wrap;
+
+    overflow-y: auto;
+}
+
+section.main > section#choices > div{
+    margin: 10px;
+    padding: 10px;
+    word-break: break-word;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    max-width: 100%;
+    min-width: 80px;
+    transition: 2s;
+}
+
+/*Choice Colors*/
+section.main > section#choices > div:nth-child(4n+1){
+    background-color: var(--main-choice-background-color1);
+    color: var(--main-choice-text-color1);
+}
+
+section.main > section#choices > div:nth-child(4n+2){
+    background-color: var(--main-choice-background-color2);
+    color: var(--main-choice-text-color2);
+}
+
+section.main > section#choices > div:nth-child(4n+3){
+    background-color: var(--main-choice-background-color3);
+    color: var(--main-choice-text-color3);
+}
+
+section.main > section#choices > div:nth-child(4n){
+    background-color: var(--main-choice-background-color4);
+    color: var(--main-choice-text-color4);
+}
+
+/*Hovered Choice*/
+section.main:not(.hidden) > section#choices > div:hover{
+    filter: brightness(150%);
+}
+
+/*Main home children*/
+section.mainHome h1 {
+    font-size: 4rem;
+    padding: 10px;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+section.mainHome p {
+    font-size: 1rem;
+    font-family: 'roboto', sans-serif;
+    word-wrap: break-word;
+}
+
+section.mainHome > input#roomCode {
+    font-size: 3rem;
+    font-family: 'montserrat', sans-serif;
+    text-align: center;
+    color: var(--primary-color);
+    border: none;
+    border-bottom: 4px double var(--main-text-color);
+    transition: 1s all;
+    margin:20px;
+}
+section.mainHome > input#roomCode:focus, section.mainHome > input#roomCode:hover {
+    border: none;
+    border-bottom: 4px double var(--primary-color);
+    transition: 1s all;
+}
+
+section.mainHome > input#roomCode:focus::-webkit-input-placeholder, section.mainHome > input#roomCode:hover::-webkit-input-placeholder {
+    color: var(--primary-color);
+    opacity: 0.7;
+    transition: 1s all;
+}
+
+section.mainHome > button#roomCodeSubmit {
+    font-size: 2rem;
+    font-family: 'montserrat', sans-serif;
+    margin: 10px;
+    padding: 10px;
+    word-break: break-word;
+
+    border: 2px solid black;
+    border-radius: 10px;
+
+    max-width: 25%;
+    min-width: 80px;
+    background-color: var(--mainHome-join-background-color);
+    color: var(--mainHome-join-text-color);
+}
+
+/*Footer Children*/
+section.footer > * {
+    margin-right: 20px;
+}
+
+section.footer > div.roomInfo > *{
+    font-size: 1.5rem;
+}
+
+section.footer > div.musicInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+section.footer > div.musicInfo > p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+section.footer > div.musicInfo > p.musicName {
+    color: var(--primary-color);
+}
+
+section.footer > div.musicInfo > p.musicAuthor {
+    color: var(--secondary-color);
+}

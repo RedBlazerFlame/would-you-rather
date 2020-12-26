@@ -1,0 +1,34 @@
+{
+    "tracks":[
+        {
+            "name": "0 Centimeters Background Music (Takagi-san OST)",
+            "author": "Yuiko Ohara",
+            "fileName": "0 centimeters BGM.mp3"
+        },
+        {
+            "name": "Alphys (Undertale OST)",
+            "author": "Toby Fox",
+            "fileName": "Alphys.mp3"
+        },
+        {
+            "name": "Dummy (Undertale OST)",
+            "author": "Toby Fox",
+            "fileName": "Dummy.mp3"
+        },
+        {
+            "name": "First Visit to K&A (Weathering with You OST)",
+            "author": "RADWIMPS",
+            "fileName": "First Visit To K  A.mp3"
+        },
+        {
+            "name": "Itomori High School (Your Name OST)",
+            "author": "RADWIMPS",
+            "fileName": "Itomori high school.mp3"
+        },
+        {
+            "name": "Visiting Home (Weathering with You OST)",
+            "author": "RADWIMPS",
+            "fileName": "Visiting Home.mp3"
+        }
+    ]
+}

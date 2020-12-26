@@ -1,0 +1,406 @@
+{
+    "questions": [
+        {
+            "question": null,
+            "choices": [
+                "Be rich",
+                "Be famous",
+                "Be kind"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Have the power to traverse time freely",
+                "Have the power to go to any point in space instantly"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Have the power to predict the future, but have no one to believe your predictions",
+                "Always be uncertain about the future, but have everyone always believe what you have to say"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Live without electronic devices",
+                "Live without friends"
+            ]
+        },
+        {
+            "question": "Would you rather join... (by Kireikishi)",
+            "choices": [
+                "Survey Corps",
+                "Garrison",
+                "Military Police"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be locked inside your home",
+                "Be locked out from your home"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be smart",
+                "Look good"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be poor but wise",
+                "Be rich but foolish"
+            ]
+        },
+        {
+            "question": "Would you rather eat...",
+            "choices": [
+                "Burger",
+                "Chicken",
+                "Vegetables",
+                "Soup",
+                "Egg",
+                "Ramen",
+                "Bacon"
+            ]
+        },
+        {
+            "question": "Which do you prefer? (by Kireikishi)",
+            "choices": [
+                "Harry Potter",
+                "Percy Jackson"
+            ]
+        },
+        {
+            "question": "Would you rather? (by Kireikishi)",
+            "choices": [
+                "Watch Anime",
+                "Read Manga"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Not be able to smell",
+                "Not be able to taste"
+            ]
+        },
+        {
+            "question": "1+1=?",
+            "choices": [
+                "2",
+                "11",
+                "fish",
+                "wait what",
+                "?",
+                "0"
+            ]
+        },
+        {
+            "question": "At parties, you can mostly be found further away from the action (from 16personalities.com)",
+            "choices": [
+                "Strongly Agree",
+                "Agree",
+                "Neutral",
+                "Disagree",
+                "Strongly Disagree"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Read a book",
+                "Watch Television"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Watch Netflix",
+                "Watch YouTube"
+            ]
+        },
+        {
+            "question": "If 2 + x = 9, what is x?",
+            "choices": [
+                "7",
+                "6",
+                "8",
+                "A letter",
+                "x is x",
+                "ew algebra no"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be kind-hearted",
+                "Be intellectually gifted"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Eat something tasty off of the floor",
+                "Eat something disgusting from a clean plate"
+            ]
+        },
+        {
+            "question": "Would you rather? (by NytHeero)",
+            "choices": [
+                "Watch a low-quality movie for free",
+                "Watch a high-quality movie for $5"
+            ]
+        },
+        {
+            "question": "If you had $1000, and you found an interesting $5 item, would you...",
+            "choices": [
+                "Buy it",
+                "Save the $5 for a later time"
+            ]
+        },
+        {
+            "question": "If you had $10, and you found an interesting $5 item, would you...",
+            "choices": [
+                "Buy it",
+                "Save the $5 for a later time"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Fix your past mistakes",
+                "Ensure that you do not make mistakes in the future"
+            ]
+        },
+        {
+            "question": "Tell me ...",
+            "choices": [
+                "why",
+                "how this world works",
+                "that you love me",
+                "the meaning of life"
+            ]
+        },
+        {
+            "question": "I want ...",
+            "choices": [
+                "you more than any blue sky!",
+                "to be with you",
+                "to watch Netflix",
+                "to be happy",
+                "you to leave me be",
+                "to go to a party"
+            ]
+        },
+        {
+            "question": "Yanny or Laurel?",
+            "choices": [
+                "Yanny",
+                "Laurel",
+                "or",
+                "what",
+                "no not this please"
+            ]
+        },
+        {
+            "question": "I am ...",
+            "choices": [
+                "inevitable",
+                "who I am, who I was, and who I will always be"
+            ]
+        },
+        {
+            "question": "I would appreciate if ...",
+            "choices": [
+                "you respect the rules",
+                "you become more flexible"
+            ]
+        },
+        {
+            "question": "Meeska, Mooska ...",
+            "choices": [
+                "Mickey Mouse!",
+                "No Mickey",
+                "Your show is outdated, Mickey"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Never be able to hug",
+                "Never be able to have handshakes"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be immune to fire",
+                "Be immune to poison"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Play games",
+                "Make games"
+            ]
+        },
+        {
+            "question": "Which is the worst year?",
+            "choices": [
+                "1939",
+                "1940",
+                "1978",
+                "2019",
+                "2020",
+                "2021",
+                "2077"
+            ]
+        },
+        {
+            "question": "Sasageyo, Sasageyo ...",
+            "choices": [
+                "Shinzou wo Sasageyo!",
+                "Nice words, magic man",
+                "What even is this"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be loved by everyone",
+                "Be respected by everyone"
+            ]
+        },
+        {
+            "question": "AHH, A MONSTER!",
+            "choices": [
+                "*Run away*",
+                "*Hide away*",
+                "*Turn lights on* oh look, it's just a puppet.",
+                "*Stand with courage* this beast has no chance against me!"
+            ]
+        },
+        {
+            "question": "Creeper ...",
+            "choices": [
+                "aww man",
+                "is a creepy thing",
+                "is overrated",
+                "blew my house up ;-;",
+                "what even is a creeper"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Live in the Hunger Games universe",
+                "Live in the Divergent universe"
+            ]
+        },
+        {
+            "question": "Uh oh, Mayuri's watch stopped working.",
+            "choices": [
+                "*Chuckles* I'm in danger",
+                "*Chuckles in discomfort*",
+                "*Goes back in time*",
+                "Who is Mayuri?"
+            ]
+        },
+        {
+            "question": "___ is Gamora?",
+            "choices": [
+                "Who",
+                "Where",
+                "What",
+                "When",
+                "Why",
+                "How"
+            ]
+        },
+        {
+            "question": "I ___ y'all.",
+            "choices": [
+                "love",
+                "hate"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be able to fly",
+                "Be able to become invisible"
+            ]
+        },
+        {
+            "question": "Stay ___",
+            "choices": [
+                "Alive",
+                "at home",
+                "with me"
+            ]
+        },
+        {
+            "question": "____ should I talk to?",
+            "choices": [
+                "Who",
+                "Whom"
+            ]
+        },
+        {
+            "question": "6CO2 + 6H20 => ?",
+            "choices": [
+                "C6H12O6 + 6O2",
+                "Glucose and Oxygen",
+                "Photosynthesis!",
+                "C6H12O6 + 6O2 in the presence of light energy",
+                "Do I look like a CHEMIST to you?"
+            ]
+        },
+        {
+            "question": "What is the meaning of life?",
+            "choices": [
+                "42",
+                "Nothing",
+                "an organismic state characterized by capacity for metabolism (see METABOLISM sense 1), growth, reaction to stimuli, and reproduction (Merriam-Webster. (n.d.). Life. In Merriam-Webster.com dictionary. Retrieved December 25, 2020, from https://www.merriam-webster.com/dictionary/life)",
+                "Happiness",
+                "Do I look like a PHILOSOPHER to you?"
+            ]
+        },
+        {
+            "question": "Never gonna ...",
+            "choices": [
+                "give you up",
+                "let you down",
+                "run around",
+                "desert you"
+            ]
+        },
+        {
+            "question": "Mitochondria ...",
+            "choices": [
+                "is the powerhouse of the cell",
+                "is the brain of a computer",
+                "is an organelle which is responsible for cell metabolism",
+                "is overrated",
+                "what even is this",
+                "Do I look like a BIOLOGIST to you?"
+            ]
+        },
+        {
+            "question": "The second law of ...",
+            "choices": [
+                "motion states that for every force, there is another force equal but opposite in direction",
+                "thermodynamics states that entropy must generally increase with time",
+                "the internet states that you should stop making so many science and math questions"
+            ]
+        }
+    ]
+}

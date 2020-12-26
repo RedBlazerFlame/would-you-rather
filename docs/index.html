@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Stylesheets-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+    <!--Scripts-->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="themes.js"></script>
+    <script defer src="client.js"></script>
+
+    <title>Would you Rather?</title>
+</head>
+
+<body>
+    <!--Audio-->
+    <audio id="music"></audio>
+    <!--Window-->
+    <main class="window">
+        <section class="header">
+            <div class="gameHeaderInfo">
+                <p class="title">
+                    <span class="primaryColor">Would</span> you <span class="secondaryColor">Rather?</span>
+                </p>
+                <p class="author">
+                    <span class="secondaryColor">Made</span> by <span class="primaryColor">RedBlazerFlame</span>
+                </p>
+            </div>
+            <div class="themeFormHeader">
+                <label for="theme">Theme:</label>
+                <select name="theme" id="theme">
+                    <optgroup label="Light">
+                        <option value="lm1">Monochromatic Light</option>
+                        <option value="lbo1">Blue and Orange Light</option>
+                        <option value="lpg1">Purple and Green Light</option>
+                        <option value="lrb1">Red and Blue Light</option>
+                    </optgroup>
+                    <optgroup label="Dark">
+                        <option value="dm1">Monochromatic Dark</option>
+                        <option value="dbo1" selected>Blue and Orange Dark (Default)</option>
+                        <option value="dpg1">Purple and Green Dark</option>
+                        <option value="drb1">Red and Blue Dark</option>
+                    </optgroup>
+                        
+                </select>
+            </div>
+            <div class="usernameFormHeader">
+                <p class="label">Username:</p>
+                <input id="usernameInput" placeholder="username" />
+            </div>
+        </section>
+        <section id="lsidebar" class="lsidebar">
+
+        </section>
+        <section id="main" class="main hidden">
+            <p id="question">Would you Rather?</p>
+            <p class="line"> </p>
+            <section id="choices">
+                <div data-index=0>Headpat NezukoAAAAAAAAAAAAAA</div>
+                <div data-index=1>Have Nezuko headpat youAAAAAAAA</div>
+                <div data-index=2>BothAAAAAAAAAAAAAAAAAAAAAAAAA</div>
+                <div data-index=3>NeitherAAAAAAAAAAAAAAAAAAAAA</div>
+                <div data-index=3>NeitherAAAAAAAAAAAAAAAAAAAAA</div>
+                <div data-index=3>NeitherAAAAAAAAAAAAAAAAAAAAA</div>
+                <div data-index=3>NeitherAAAAAAAAAAAAAAAAAAAAA</div>
+                <div data-index=3>NeitherAAAAAAAAAAAAAAAAAAAAA</div>
+            </section>
+        </section>
+        <section id="mainHome" class="mainHome hidden">
+            <h1 id="mainHomeTitle">Join Room</h1>
+            <p class="line"></p>
+            <p id="roomCodeFormInfo">Leave the &OpenCurlyDoubleQuote;<span class="primaryColor">Room
+                    Code</span>&CloseCurlyDoubleQuote; field <span class="secondaryColor">blank</span> to create a
+                random room and then invite people to that room using the 6-digit alphanumeric code.</p>
+            <input id="roomCode" placeholder="Room Code" />
+            <button id="roomCodeSubmit">Create Room Instead</button>
+        </section>
+        <section class="rsidebar">
+            <h1 class="rsidebarHeader">Previous Round Results</h1>
+            <div id="results" class="results">
+            </div>
+        </section>
+        <section class="footer">
+            <div class="roomInfo">
+                <p>Room Code: <span id="roomInfoCode" class="primaryColor">none</span>
+                    Room Name: <span id="roomInfoName" class="secondaryColor">none</span></p>
+            </div>
+            <div class="musicInfo">
+                <p id="musicName" class="musicName"></p>
+                <p id="musicAuthor" class="musicAuthor"></p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

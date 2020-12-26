@@ -226,12 +226,9 @@ setInterval(() => {
                 break;
             case "question":
                 {
-                    //If everyone has voted
-                    if(clientsInRoom(roomCode).length <= [...roomInfo.results.values()].reduce((acc, cur) => acc + cur, 0)){
-                        roomInfo.clock = roomInfo.timeLength[roomInfo.gameState];
-                    }
-                    //If question time is over
-                    if (roomInfo.clock >= roomInfo.timeLength[roomInfo.gameState]) {
+                    
+                    //If question time is over or if everyone has voted
+                    if (roomInfo.clock >= roomInfo.timeLength[roomInfo.gameState] || clientsInRoom(roomCode).length <= [...roomInfo.results.values()].reduce((acc, cur) => acc + cur, 0)) {
                         roomInfo.clock = -1;
                         roomInfo.gameState = "results";
 

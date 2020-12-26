@@ -241,7 +241,7 @@ roomJoinButton.addEventListener("click", (ev) => {
             roomCreationForm.classList.add("hidden");
         } else {
             // The user intends to create a new room
-            socket.emit("roomCreate", roomCode.value, (roomIntermissionTime.value === "" ? 10 : +roomIntermissionTime.value),(roomQuestionTime.value === "" ? 60 : +roomQuestionTime.value));
+            socket.emit("roomCreate", roomCode.value, (roomIntermissionTime.value === "" ? 10 : +roomIntermissionTime.value),(roomQuestionTime.value === "" ? 30 : +roomQuestionTime.value));
         }
     }
 });

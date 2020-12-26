@@ -1,5 +1,5 @@
 //Declaration Statements
-const PORT = 4000;
+const PORT = process.env.PORT;
 const codeLength = 6;
 const clockDeltaTime = 1000;
 let rooms = new Map();

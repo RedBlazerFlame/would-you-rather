@@ -1,89 +1,79 @@
 /*Root*/
-:root, html{
+
+:root, html {
     /*Colors*/
     --primary-color: #00aaff;
     --secondary-color: #ffaa00;
     --text-color: #FFFFFF;
-
     /*Logo Filters*/
     --image-hue-rotate-amount: 0deg;
     --image-saturation-amount: 100%;
     --image-invert-amount: 0%;
-
     /*Global Properties*/
-    font-size: calc( min( 1vw , 1vh ) );
+    font-size: 1.25vh;
     font-family: "Montserrat", sans-serif;
-
     /*Window*/
     --window-background-color: #222222;
-
     /*Header*/
     --header-background-color: #444444;
     --header-text-color: var(--text-color);
     --header-height: 8vh;
-
     /*Footer*/
     --footer-background-color: #444444;
     --footer-text-color: var(--text-color);
     --footer-height: 8vh;
-    
     /*Left Sidebar*/
     --lsidebar-background-color: var(--primary-color);
     --lsidebar-text-color: var(--text-color);
     --lsidebar-width: 20vw;
     --lsidebar-vertical-margin: 10px;
     --lsidebar-right-border-radius: 10px;
-
     /*Right Sidebar*/
     --rsidebar-background-color: var(--secondary-color);
     --rsidebar-text-color: var(--text-color);
     --rsidebar-width: 20vw;
     --rsidebar-vertical-margin: 10px;
     --rsidebar-left-border-radius: 10px;
-
     /*Main*/
     --main-background-color: #666666;
     --main-text-color: #FFFFFF;
     --main-margin: 10px;
     --main-border-radius: 10px;
-
     /*Main Children*/
     --main-question-text-color: #FFFFFF;
-
     --main-choice-text-color1: #000000;
     --main-choice-text-color2: #000000;
     --main-choice-text-color3: #FFFFFF;
     --main-choice-text-color4: #FFFFFF;
-    
     --main-choice-background-color1: var(--primary-color);
     --main-choice-background-color2: var(--secondary-color);
     --main-choice-background-color3: #006699;
     --main-choice-background-color4: #996600;
-
     /*Main Home Children*/
     --mainHome-join-text-color: var(--main-text-color);
     --mainHome-join-background-color: var(--primary-color);
-
     --mainHome-join-text-color2: var(--main-text-color);
     --mainHome-join-background-color2: var(--secondary-color);
 }
 
 /*Color Classes*/
-.primaryColor{
+
+.primaryColor {
     color: var(--primary-color);
 }
 
-.secondaryColor{
+.secondaryColor {
     color: var(--secondary-color);
 }
 
 /*display classes*/
-.hidden{
+
+.hidden {
     display: none;
     visibility: hidden;
 }
 
-.line{
+.line {
     border: 1px solid var(--main-question-text-color);
     width: 75%;
     padding: 0;
@@ -91,9 +81,9 @@
     height: 0;
 }
 
-
 /*Elements*/
-body{
+
+body {
     margin: 0;
     padding: 0;
     max-width: 100vw;
@@ -104,7 +94,8 @@ input:focus {
 }
 
 /*Window*/
-main.window{
+
+main.window {
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -112,107 +103,81 @@ main.window{
     overflow: auto;
     background-color: var(--window-background-color);
     display: grid;
-    grid-template-columns: minmax(min-content, var(--lsidebar-width)) auto minmax(min-content, var(--rsidebar-width));
-    grid-template-rows: minmax(min-content , var(--header-height)) minmax(auto, calc(100vh - (var(--header-height) + var(--footer-height)))) minmax(min-content , var(--footer-height));
-    grid-template-areas:
-    "header header header"
-    "lsidebar main rsidebar"
-    "footer footer footer";
-
+    grid-template-columns: 0vw 75vw 25vw;
+    grid-template-rows: minmax(min-content, var(--header-height)) minmax(auto, calc(100vh - (var(--header-height) + var(--footer-height)))) minmax(min-content, var(--footer-height));
+    grid-template-areas: "header header header" "main main rsidebar" "footer footer footer";
     font-size: 1rem;
-
     max-width: 100vw;
     max-height: 100vh;
 }
 
 /*Window Children*/
-main.window > *{
+
+main.window>* {
     padding: 10px;
     margin: 0;
 }
 
-section.header{
+section.header {
     grid-area: header;
     background-color: var(--header-background-color);
     color: var(--header-text-color);
     font-size: 2rem;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-section.lsidebar{
-    grid-area: lsidebar;
-    background-color: var(--primary-color);
-    color: var(--lsidebar-text-color);
-
-    margin: var(--lsidebar-vertical-margin) 0 var(--lsidebar-vertical-margin) 0;
-    border-radius: 0 var(--lsidebar-right-border-radius) var(--lsidebar-right-border-radius) 0;
-
-    font-size: 1rem;
-    overflow-y: auto;
-    
-    display: flex;
-    flex-direction: column-reverse;
+section.lsidebar {
+    display: none;
 }
 
-section.main{
+section.main {
     grid-area: main;
     background-color: var(--main-background-color);
     color: var(--main-text-color);
-
     margin: var(--main-margin);
     border-radius: var(--main-border-radius);
-
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-
     z-index: 2;
 }
 
-section.mainHome{
+section.mainHome {
     grid-area: main;
     background-color: var(--main-background-color);
     color: var(--main-text-color);
-
     margin: var(--main-margin);
     border-radius: var(--main-border-radius);
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     /*display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;*/
 }
 
-section.rsidebar{
+section.rsidebar {
     grid-area: rsidebar;
     background-color: var(--secondary-color);
     color: var(--rsidebar-text-color);
-
     margin: var(--rsidebar-vertical-margin) 0 var(--rsidebar-vertical-margin) 0;
     border-radius: var(--rsidebar-left-border-radius) 0 0 var(--rsidebar-left-border-radius);
-
     font-size: 1rem;
     overflow-y: auto;
-    
     display: flex;
     flex-direction: column;
 }
 
-section.footer{
+section.footer {
     grid-area: footer;
     background-color: var(--footer-background-color);
     color: var(--footer-text-color);
     font-size: 2rem;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -220,13 +185,14 @@ section.footer{
 }
 
 /*Header Children*/
-section.header > div.gameHeaderInfoLogo {
+
+section.header>div.gameHeaderInfoLogo {
     display: flex;
     flex-direction: row;
     margin: 0;
 }
 
-section.header > div.gameHeaderInfoLogo > * {
+section.header>div.gameHeaderInfoLogo>* {
     margin: 0;
 }
 
@@ -237,146 +203,146 @@ img#logo {
     filter: hue-rotate(var(--image-hue-rotate-amount)) saturate(var(--image-saturation-amount)) invert(var(--image-invert-amount));
 }
 
-section.header > div.gameHeaderInfoLogo > div.gameHeaderInfo {
-    display: flex;
-    flex-direction: column;
+section.header>div.gameHeaderInfoLogo>div.gameHeaderInfo {
+    display: none;
 }
 
-section.header > div.usernameFormHeader{
+section.header>div.usernameFormHeader {
     display: flex;
     flex-direction: column;
 }
 
 /*Header Info Children*/
-section.header > div.gameHeaderInfoLogo > div.gameHeaderInfo > *{
+
+section.header>div.gameHeaderInfoLogo>div.gameHeaderInfo>* {
     margin: 0;
 }
 
-section.header > div.gameHeaderInfoLogo > div.gameHeaderInfo > p.author{
+section.header>div.gameHeaderInfoLogo>div.gameHeaderInfo>p.author {
     font-size: 1rem;
     font-family: 'roboto', sans-serif;
 }
 
 /*Header Username Children*/
-section.header > div.usernameFormHeader > *{
+
+section.header>div.usernameFormHeader>* {
     margin: 0;
 }
 
-section.header > div.usernameFormHeader > p.label {
+section.header>div.usernameFormHeader>p.label {
     font-size: 1rem;
 }
 
-section.header > div.usernameFormHeader > input#usernameInput {
-    margin-top: 10px;
+section.header>div.usernameFormHeader>input#usernameInput {
     font-size: 2rem;
     color: var(--secondary-color);
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     border: none;
     border-bottom: 2px solid var(--text-color);
 }
 
-section.header > div.themeFormHeader {
+section.header>div.themeFormHeader {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-section.header > div.themeFormHeader > *{
-    margin:0;
+section.header>div.themeFormHeader>* {
+    margin: 0;
     font-size: 1.25rem;
 }
 
-section.header > div.themeFormHeader > select#theme{
+section.header>div.themeFormHeader>select#theme {
     font-family: "roboto", sans-serif;
     background-color: var(--main-background-color);
     color: var(--main-text-color);
 }
 
-
-
 /*Left Side Bar Children*/
-section.lsidebar > p {
+
+section.lsidebar>p {
     margin: 5px 0 0 0;
 }
 
 /*Right Side Bar Children*/
-section.rsidebar > h1.rsidebarHeader {
+
+section.rsidebar>h1.rsidebarHeader {
     margin: 0;
     margin-bottom: 20px;
     color: var(--text-color);
 }
 
-section.rsidebar > div.results {
+section.rsidebar>div.results {
     margin: 0;
     display: flex;
     flex-direction: column;
 }
 
-section.rsidebar > div.results > p {
+section.rsidebar>div.results>p {
     margin: 0;
     margin-bottom: 10px;
 }
 
 /*Main Children*/
-section.main > p#question{
+
+section.main>p#question {
     color: var(--main-question-text-color);
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-section.main > section#choices{
+section.main>section#choices {
     flex-grow: 1000;
     display: flex;
-
     flex-direction: row;
     justify-content: center;
     align-content: stretch;
     flex-wrap: wrap;
-
     overflow-y: auto;
 }
 
-section.main > section#choices > div{
+section.main>section#choices>div {
     margin: 10px;
     padding: 10px;
     word-break: break-word;
-
     border: 2px solid black;
     border-radius: 10px;
-
     max-width: 100%;
     min-width: 80px;
     transition: 2s;
 }
 
 /*Choice Colors*/
-section.main > section#choices > div:nth-child(4n+1){
+
+section.main>section#choices>div:nth-child(4n+1) {
     background-color: var(--main-choice-background-color1);
     color: var(--main-choice-text-color1);
 }
 
-section.main > section#choices > div:nth-child(4n+2){
+section.main>section#choices>div:nth-child(4n+2) {
     background-color: var(--main-choice-background-color2);
     color: var(--main-choice-text-color2);
 }
 
-section.main > section#choices > div:nth-child(4n+3){
+section.main>section#choices>div:nth-child(4n+3) {
     background-color: var(--main-choice-background-color3);
     color: var(--main-choice-text-color3);
 }
 
-section.main > section#choices > div:nth-child(4n){
+section.main>section#choices>div:nth-child(4n) {
     background-color: var(--main-choice-background-color4);
     color: var(--main-choice-text-color4);
 }
 
 /*Hovered Choice*/
-section.main:not(.hidden) > section#choices > div:hover{
+
+section.main:not(.hidden)>section#choices>div:hover {
     filter: brightness(150%);
 }
 
 /*Main home children*/
+
 section.mainHome h1 {
     font-size: 4rem;
     padding: 10px;
@@ -390,7 +356,7 @@ section.mainHome p {
     word-wrap: break-word;
 }
 
-section.mainHome > input#roomCode {
+section.mainHome>input#roomCode {
     font-size: 3rem;
     font-family: 'montserrat', sans-serif;
     text-align: center;
@@ -398,44 +364,43 @@ section.mainHome > input#roomCode {
     border: none;
     border-bottom: 4px double var(--main-text-color);
     transition: 1s all;
-    margin:20px;
+    margin: 20px;
     background-color: var(--main-background-color);
 }
-section.mainHome > input#roomCode:focus, section.mainHome > input#roomCode:hover {
+
+section.mainHome>input#roomCode:focus, section.mainHome>input#roomCode:hover {
     border: none;
     border-bottom: 4px double var(--primary-color);
     transition: 1s all;
 }
 
-section.mainHome > input#roomCode:focus::-webkit-input-placeholder, section.mainHome > input#roomCode:hover::-webkit-input-placeholder {
+section.mainHome>input#roomCode:focus::-webkit-input-placeholder, section.mainHome>input#roomCode:hover::-webkit-input-placeholder {
     color: var(--primary-color);
     opacity: 0.7;
     transition: 1s all;
 }
 
-section.mainHome > button#roomCodeSubmit {
+section.mainHome>button#roomCodeSubmit {
     font-size: 2rem;
     font-family: 'montserrat', sans-serif;
     margin: 10px;
     padding: 10px;
     word-break: break-word;
-
     border: 2px solid black;
     border-radius: 10px;
-
     max-width: 25%;
     min-width: 80px;
     background-color: var(--mainHome-join-background-color);
     color: var(--mainHome-join-text-color);
 }
 
-section.mainHome > div.roomCreationForm {
+section.mainHome>div.roomCreationForm {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-section.mainHome > div.roomCreationForm > input {
+section.mainHome>div.roomCreationForm>input {
     font-size: 2rem;
     font-family: 'montserrat', sans-serif;
     text-align: center;
@@ -443,32 +408,33 @@ section.mainHome > div.roomCreationForm > input {
     border: none;
     border-bottom: 4px double var(--main-text-color);
     transition: 1s all;
-    margin:20px;
+    margin: 20px;
     background-color: var(--main-background-color);
 }
 
-section.mainHome > div.roomCreationForm > input:focus, section.mainHome > div.roomCreationForm > input:hover {
+section.mainHome>div.roomCreationForm>input:focus, section.mainHome>div.roomCreationForm>input:hover {
     border: none;
     border-bottom: 4px double var(--primary-color);
     transition: 1s all;
 }
 
-section.mainHome > div.roomCreationForm > input:focus::-webkit-input-placeholder, section.mainHome > div.roomCreationForm > input:hover::-webkit-input-placeholder {
+section.mainHome>div.roomCreationForm>input:focus::-webkit-input-placeholder, section.mainHome>div.roomCreationForm>input:hover::-webkit-input-placeholder {
     color: var(--primary-color);
     opacity: 0.7;
     transition: 1s all;
 }
 
 /*Footer Children*/
-section.footer > * {
+
+section.footer>* {
     margin-right: 20px;
 }
 
-section.footer > div.roomInfo > *{
+section.footer>div.roomInfo>* {
     font-size: 1.5rem;
 }
 
-section.footer > div.musicInfo {
+section.footer>div.musicInfo {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -477,16 +443,47 @@ section.footer > div.musicInfo {
     margin: 0;
 }
 
-section.footer > div.musicInfo > p {
+section.footer>div.musicInfo>p {
     margin: 0;
     padding: 0;
     font-size: 1.5rem;
 }
 
-section.footer > div.musicInfo > p.musicName {
+section.footer>div.musicInfo>p.musicName {
     color: var(--primary-color);
 }
 
-section.footer > div.musicInfo > p.musicAuthor {
+section.footer>div.musicInfo>p.musicAuthor {
     color: var(--secondary-color);
+}
+
+/*For Desktops*/
+
+@media only screen and (orientation: landscape) {
+    :root, html {
+        /*Global Properties*/
+        font-size: min( 1vw, 1.5vh);
+    }
+    section.lsidebar {
+        grid-area: lsidebar;
+        background-color: var(--primary-color);
+        color: var(--lsidebar-text-color);
+        margin: var(--lsidebar-vertical-margin) 0 var(--lsidebar-vertical-margin) 0;
+        border-radius: 0 var(--lsidebar-right-border-radius) var(--lsidebar-right-border-radius) 0;
+        font-size: 1rem;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    main.window {
+        grid-template-columns: minmax(min-content, var(--lsidebar-width)) auto minmax(min-content, var(--rsidebar-width));
+        grid-template-areas: "header header header" "lsidebar main rsidebar" "footer footer footer";
+    }
+    section.header>div.gameHeaderInfoLogo>div.gameHeaderInfo {
+        display: flex;
+        flex-direction: column;
+    }
+    section.header>div.usernameFormHeader>input#usernameInput {
+        margin-top: 10px;
+    }
 }

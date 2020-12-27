@@ -11,7 +11,7 @@
     --image-invert-amount: 0%;
 
     /*Global Properties*/
-    font-size: clamp(0.9vh, 0.9vw, 900px);
+    font-size: calc( min( 1vw , 1vh ) );
     font-family: "Montserrat", sans-serif;
 
     /*Window*/

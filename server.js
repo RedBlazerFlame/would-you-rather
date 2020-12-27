@@ -51,7 +51,7 @@ const clientsInRoom = (code) => {
 };
 
 //Get random question
-const getRandomQuestion = () => questionsJson.questions[Math.floor(Math.random() * questionsJson.questions.length)];
+const getRandomQuestion = () => questionsJson.questions[Math.floor(Math.random() * questionsJson.questions.length )];
 const questionsJson = JSON.parse(readFileSync("data/questions.json", { encoding: "utf-8" }));
 
 //Get random tracks
@@ -67,23 +67,23 @@ io.on("connection", (socket) => {
     //Socket local variables
     let socketRoomCode = null;
 
-    socket.username = `Player`;
+    let socketUserName = `Player`;
 
     socket.emit("log", "Hello Mortals.");
     socket.broadcast.emit("log", `client ${socket.id} joined`);
 
     //Set Initial Username
     socket.on("setInitialUsername", (username) => {
-        socket.username = username;
+        socketUserName = username;
     });
 
     //Change Username
     socket.on("changeUsername", (newUsername) => {
-        socket.emit("message", `You changed your username from ${socket.username} to ${newUsername}`);
+        socket.emit("message", `You changed your username from ${socketUserName} to ${newUsername}`);
         if (socketRoomCode) {
-            socket.to(socketRoomCode).emit("message", `${socket.username} changed their username to ${newUsername}`);
+            socket.to(socketRoomCode).emit("message", `${socketUserName} changed their username to ${newUsername}`);
         }
-        socket.username = newUsername;
+        socketUserName = newUsername;
     });
 
     //Join Room
@@ -99,7 +99,7 @@ io.on("connection", (socket) => {
             socket.emit("message", `You joined room ${roomCode} "${rooms.get(roomCode).name}"`);
 
             //Broadcast to the clients in the room that the client has joined
-            socket.to(roomCode).emit("message", `${socket.username} has joined`);
+            socket.to(roomCode).emit("message", `${socketUserName} has joined`);
         } else {
             socket.emit("error", "Invalid Room!");
         }
@@ -161,7 +161,7 @@ io.on("connection", (socket) => {
                 console.log(`Deleted room ${socketRoomCode}. !rooms.has(roomCode) - ${!rooms.has(socketRoomCode)}`);
             } else {
                 //There are other clients left. Inform other clients about disconnection
-                socket.to(socketRoomCode).emit("message", `${socket.username} has left`);
+                socket.to(socketRoomCode).emit("message", `${socketUserName} has left`);
             }
         }
     });

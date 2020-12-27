@@ -476,10 +476,319 @@
             ]
         },
         {
+            "question": "Would you rather play? (by Anonymous)",
+            "choices": [
+                "Roblox",
+                "Minecraft",
+                "Fortnite",
+                "Among Us",
+                "Would you Rather"
+            ]
+        },
+        {
             "question": null,
             "choices": [
-                "Have a pet owl",
-                "Have a pet pig"
+                "Day",
+                "Night"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Sunrise",
+                "Sunset"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Clear skies",
+                "Rainy skies"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Natural",
+                "Man-made"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Tidy",
+                "Unorganized"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Concrete",
+                "Abstract"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Black",
+                "White"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Sky Blue",
+                "Orange"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Purple",
+                "Green"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Blue",
+                "Red"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Take the blue pill",
+                "Take the red pill"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Sit at your bed for the whole day",
+                "Attend a party with 100 friends for the whole day"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Ask a \"Would you Rather\" question",
+                "Answer a \"Would you Rather\" question"
+            ]
+        },
+        {
+            "question": "Would you Rather? (from Roblox Would you Rather)",
+            "choices": [
+                "Be a werewolf",
+                "Be a vampire"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Wear a fedora",
+                "Wear a top hat"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Live in a magical civilization",
+                "Live in a technological civilization"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Watch Your Name",
+                "Watch Weathering with You"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Live a long but boring life",
+                "Live a short but meaningful life"
+            ]
+        },
+        {
+            "question": "Would you Rather? (from Roblox Would you Rather)",
+            "choices": [
+                "Be a penguin",
+                "Be a polar bear"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Truth",
+                "Dare"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Live inside a beautiful but disorganized house",
+                "Live inside a normal but organized house"
+            ]
+        },
+        {
+            "question": "Would you Rather? (from Roblox Would you Rather)",
+            "choices": [
+                "Have extra gravity",
+                "Have no gravity"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be an owl",
+                "Be an eagle"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Microwave a banana",
+                "Cook a banana"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be a talented programmer",
+                "Be a super hacker"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Sports",
+                "Intellectual activities"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Starry Sky",
+                "Sunny Sky"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "T-pose on someone",
+                "Be T-posed"
+            ]
+        },
+        {
+            "question": "Pick the best option",
+            "choices": [
+                "O w O",
+                "U w U",
+                "¯\\_(ツ)_/¯",
+                "(╯°□°）╯︵ ┻━┻",
+                "✧w✧",
+                "ʘwʘ",
+                "ᕕ( ᐛ )ᕗ"
+            ]
+        },
+        {
+            "question": "Would you rather be ... (from Roblox Would you Rather)",
+            "choices": [
+                "Happy",
+                "Sad"
+            ]
+        },
+        {
+            "question": "Would you rather be ...",
+            "choices": [
+                "Angry",
+                "Calm"
+            ]
+        },
+        {
+            "question": "Would you rather be a(n) ...",
+            "choices": [
+                "Individualist",
+                "Conformist"
+            ]
+        },
+        {
+            "question": "Would you rather be ...",
+            "choices": [
+                "Peaceful",
+                "Violent"
+            ]
+        },
+        {
+            "question": "Would you rather be ... (by Cel-phone)",
+            "choices": [
+                "Batman",
+                "Superman"
+            ]
+        },
+        {
+            "question": "Would you rather be ...",
+            "choices": [
+                "Passive",
+                "Active"
+            ]
+        },
+        {
+            "question": "Do you prefer ...",
+            "choices": [
+                "Vibrance",
+                "Monochrome"
+            ]
+        },
+        {
+            "question": "Do you prefer ...",
+            "choices": [
+                "Light",
+                "Dark"
+            ]
+        },
+        {
+            "question": "Do you prefer ...",
+            "choices": [
+                "Centimeters",
+                "Inches"
+            ]
+        },
+        {
+            "question": "Do you prefer ...",
+            "choices": [
+                "PlayStation 4",
+                "Nintendo Switch"
+            ]
+        },
+        {
+            "question": "Do you prefer ...",
+            "choices": [
+                "PlayStation",
+                "Xbox"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Know when you are going to die",
+                "Know how you are going to die"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be passive-agressive",
+                "Be agressively passive"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Live without colors",
+                "Live without music"
             ]
         }
     ]

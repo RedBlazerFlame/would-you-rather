@@ -401,6 +401,86 @@
                 "thermodynamics states that entropy must generally increase with time",
                 "the internet states that you should stop making so many science and math questions"
             ]
+        },
+        {
+            "question": "Would you Rather? (by Hedwig)",
+            "choices": [
+                "Headpat Nezuko",
+                "Have Nezuko headpat you"
+            ]
+        },
+        {
+            "question": "What is 1/0",
+            "choices": [
+                "ew math no",
+                "infinity",
+                "undefined",
+                "indeterminate"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Spew rainbows from your mouth",
+                "Shoot lasers from your eyes"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Have strong arm bones",
+                "Have strong leg bones",
+                "Have strong head bones"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Never be able to feel",
+                "Never be able to think"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be broken in a normal world",
+                "Be normal in a broken world"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be called stupid",
+                "Be called overemotional"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Have no hair",
+                "Have hair all over your body"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Have X-Ray vision",
+                "Have Ultrasonic hearing"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Have a pet dog",
+                "Have a pet cat"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Have a pet owl",
+                "Have a pet pig"
+            ]
         }
     ]
 }

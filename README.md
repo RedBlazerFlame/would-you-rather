@@ -12,7 +12,7 @@ A **question** refers to anything with a prompt and choices. An example question
 
 ![Sample Question 1](https://i.pinimg.com/originals/82/e5/76/82e57631dfdd12b394a7262d89754be0.png)
 
-Notice that on the top, there is a question ("Would you Rather?"), and a timer which is showing how many seconds there are left for that round.
+Notice that on the top, there is a prompt ("Would you Rather?"), and a timer which is showing how many seconds there are left for that round.
 
 On the bottom, there are two different choices, namely:
 

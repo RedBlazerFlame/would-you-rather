@@ -10,7 +10,7 @@ An online web game built on node.js based on the popular game "would you rather"
 
 A **question** refers to anything with a prompt and choices. An example question would be:
 
-![Example Question](https://i.pinimg.com/originals/82/e5/76/82e57631dfdd12b394a7262d89754be0.png)
+![Sample Question 1](https://i.pinimg.com/originals/82/e5/76/82e57631dfdd12b394a7262d89754be0.png)
 
 Notice that on the top, there is a question ("Would you Rather?"), and a timer which is showing how many seconds there are left for that round.
 
@@ -110,8 +110,38 @@ The values that each property can store can be summarized as:
 </table>
 
 ##### properties - question
+This property can be set to a **String** value or **null**
+
+If it is set to a **String** value, it will display that string as the question/prompt.
+If set to **null**, it will display "Would you Rather?" as the question instead.
+Ex:
+
+1. Setting ```"question"``` to ```"Never gonna ..."``` gives:
+
+   ![Sample Question 2](https://i.pinimg.com/originals/a9/f6/a5/a9f6a53bcaf8d2e8d753d3c70a7d3d2b.png)
+1. Setting ```"question"``` to ```null``` gives:
+
+   ![Sample Question 1](https://i.pinimg.com/originals/82/e5/76/82e57631dfdd12b394a7262d89754be0.png)
 
 ##### properties - choices
+This property can be set to an **Array of Strings**. Each element of this array would represent a choice.
+
+Ex:
+1. Setting ```"choices"``` to ```[
+                "give you up",
+                "let you down",
+                "run around",
+                "desert you"
+            ]``` gives:
+
+   ![Sample Question 2](https://i.pinimg.com/originals/a9/f6/a5/a9f6a53bcaf8d2e8d753d3c70a7d3d2b.png)
+1. Setting ```"choices"``` to ```[
+                "Eat something tasty off of the floor",
+                "Eat something disgusting from a clean plate"
+            ]``` gives:
+
+  ![Sample Question 1](https://i.pinimg.com/originals/82/e5/76/82e57631dfdd12b394a7262d89754be0.png)
+
 
 ### Themes
 

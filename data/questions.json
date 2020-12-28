@@ -790,6 +790,207 @@
                 "Live without colors",
                 "Live without music"
             ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Live without colors",
+                "Live without music"
+            ]
+        },
+        {
+            "question": "Would you Rather? (by Kireikishi)",
+            "choices": [
+                "Save an entire city, but not your loved ones",
+                "Save your loved ones, but not the rest of the city"
+            ]
+        },
+        {
+            "question": "Which drink do you prefer? (by Kireikishi)",
+            "choices": [
+                "Coke",
+                "Pepsi"
+            ]
+        },
+        {
+            "question": "Which drink do you prefer? (by Kireikishi)",
+            "choices": [
+                "Juice",
+                "Water"
+            ]
+        },
+        {
+            "question": "Which do you prefer? (by NytHeero)",
+            "choices": [
+                "Chips",
+                "Crackers"
+            ]
+        },
+        {
+            "question": "Which drink do you prefer? (by Kireikishi)",
+            "choices": [
+                "Coke",
+                "Pepsi"
+            ]
+        },
+        {
+            "question": "5 x 8 = ? (by Kireikishi)",
+            "choices": [
+                "40",
+                "5 (mod 7)",
+                "4 (mod 6)",
+                "?",
+                "Do I look like a MATHEMATICIAN to you?"
+            ]
+        },
+        {
+            "question": "Eren ... (by Kireikishi)",
+            "choices": [
+                "Best boy",
+                "Jaeger",
+                "Yeager",
+                "Kruger",
+                "Who's Eren?"
+            ]
+        },
+        {
+            "question": "Would you Rather? (by Kireikishi)",
+            "choices": [
+                "Be a fidget spinner",
+                "Own a fidget spinner",
+                "Make a fidget spinner"
+            ]
+        },
+        {
+            "question": "Which drink do you prefer? (by Kireikishi)",
+            "choices": [
+                "Coke",
+                "Pepsi"
+            ]
+        },
+        {
+            "question": "Would you rather live near ... (by Kireikishi)",
+            "choices": [
+                "The sea",
+                "The mountains"
+            ]
+        },
+        {
+            "question": "Would you rather live  ... (by Kireikishi)",
+            "choices": [
+                "Underground",
+                "At the peak of a mountain"
+            ]
+        },
+        {
+            "question": "Would you Rather? (by Kireikishi)",
+            "choices": [
+                "DC",
+                "Marvel"
+            ]
+        },
+        {
+            "question": "Would you Rather? (by Kireikishi)",
+            "choices": [
+                "Have a Spotify premium subscription",
+                "Have a YouTube Music premium subscription"
+            ]
+        },
+        {
+            "question": "Would you rather take up a course on ... (by Kireikishi)",
+            "choices": [
+                "Biology",
+                "Chemistry",
+                "Physics"
+            ]
+        },
+        {
+            "question": "Would you Rather? (by Kireikishi)",
+            "choices": [
+                "Step on Lego",
+                "Get a paper cut"
+            ]
+        },
+        {
+            "question": "Would you Rather? (by Kireikishi)",
+            "choices": [
+                "Get a small burn",
+                "Get frostbite"
+            ]
+        },
+        {
+            "question": "Would you Rather? (by Kireikishi)",
+            "choices": [
+                "Celebrate Christmas every day",
+                "Experience Halloween every day"
+            ]
+        },
+        {
+            "question": "Would you Rather? (by Kireikishi)",
+            "choices": [
+                "Experience Valentines Day every day",
+                "Experience New Year every day"
+            ]
+        },
+        {
+            "question": "Emojis? 🤔 (by Kireikishi)",
+            "choices": [
+                "Yes! 💗👌",
+                "I prefer text emoticons :>",
+                "No."
+            ]
+        },
+        {
+            "question": "Would you Rather? (by Kireikishi)",
+            "choices": [
+                "Be an impostor in Among Us",
+                "Be a crewmate in Among Us",
+                "Be a ghost in Among Us"
+            ]
+        },
+        {
+            "question": "_____ Potato (by Kireikishi)",
+            "choices": [
+                "Tasty",
+                "Mashed",
+                "Couch"
+            ]
+        },
+        {
+            "question": "Which of these would you eat for breakfast? (by NytHeero)",
+            "choices": [
+                "Bread and Bacon",
+                "Fried Rice and Scrambled Egg",
+                "Cereal and Milk"
+            ]
+        },
+        {
+            "question": "On vacation, would you rather? (by NytHeero)",
+            "choices": [
+                "Go to a theme park",
+                "Go to a quiet, natural park"
+            ]
+        },
+        {
+            "question": "Would you Rather? (by NytHeero)",
+            "choices": [
+                "Get a boring high-income job",
+                "Get a fun average-income job"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Be normal",
+                "Be unique"
+            ]
+        },
+        {
+            "question": null,
+            "choices": [
+                "Take a guaranteed $50",
+                "Take a 50% chance to get $100 (and get $0 if you fail)"
+            ]
         }
     ]
 }

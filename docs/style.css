@@ -319,7 +319,7 @@ section.main>section#choices>div {
     border-radius: 10px;
     max-width: 100%;
     min-width: 80px;
-    transition: 2s;
+    transition: filter 2s;
 }
 
 /*Choice Colors*/
@@ -437,10 +437,25 @@ section.mainHome>div.roomCreationForm>input:focus::-webkit-input-placeholder, se
 
 section.footer>* {
     margin-right: 20px;
+    word-wrap: nowrap;
+}
+
+section.footer>div.roomInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: var(--footer-height);
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 section.footer>div.roomInfo>* {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    margin: 0;
+    padding: 0;
+    max-height: calc( var(--footer-height) / 2 );
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 section.footer>div.musicInfo {
@@ -450,13 +465,19 @@ section.footer>div.musicInfo {
     justify-content: center;
     padding: 0;
     margin: 0;
+    max-height: var(--footer-height);
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 section.footer>div.musicInfo>p {
     margin: 0;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: right;
+    max-height: calc( var(--footer-height) / 2 );
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 section.footer>div.musicInfo>p.musicName {
